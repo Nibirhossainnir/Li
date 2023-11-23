@@ -1,16 +1,4 @@
-// var p = document.querySelector("p");
-// navigator.geolocation.getCurrentPosition(position=>{
-//     const a = position.coords;
-//     console.log(a);
-//     p.innerHTML = `Latitude:${latitude}<br>Longitude:${longitude}<br>Accuracy:${accuracy}<br>Speed:${speed}`
-// });
-    
-
-setInterval(()=>{
-    var p = document.querySelector("p");
-    navigator.geolocation.getCurrentPosition(position=>{
-        const a = position.coords;
-        p.innerHTML = `Latitude:${a.latitude}<br>Longitude:${a.longitude}<br>Accuracy:${a.accuracy}<br>Speed:${a.speed}`;
-    });
-},1);
-
+navigator.geolocation.getCurrentPosition(position=>{
+    const {latitude,longitude} = position.coords;
+    map.innerHTML = '<iframe width ="700" height="300" src="https://maps.google.com/maps?q='+latitude+','+longitude+'&amp;z=15&amp;output=embed"></iframe>';
+});
